@@ -16,12 +16,14 @@ import random
 import time
 
 # Create a metric to track time spent and requests made.
+#创建一个指标以跟踪花费的时间和发出的请求。
 REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
 
 # Decorate function with metric.
+#指标装饰器函数
 @REQUEST_TIME.time()
 def process_request(t):
-    """A dummy function that takes some time."""
+    """A dummy function that takes some time. 耗时的虚拟函数"""
     time.sleep(t)
 
 if __name__ == '__main__':
